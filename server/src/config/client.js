@@ -30,7 +30,6 @@ try {
     name: "getUnreadEmail",
     arguments: {},
   });
-  console.log(result.content);
 } catch (err) {
   console.error("❌ Client error:", err.message);
 } finally {

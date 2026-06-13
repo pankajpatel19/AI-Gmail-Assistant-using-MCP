@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { getAuthUrl, handleCallback, checkAuth, logout } from "../../auth.js";
 import { setGmailClient } from "../services/gmail.js";
+import { FRONTEND_URL } from "../../env.js";
 
 const router = Router();
 
@@ -39,10 +40,10 @@ router.get("/callback", async (req, res) => {
     setGmailClient(client);
 
     // Redirect back to frontend
-    res.redirect("http://localhost:5173/");
+    res.redirect(FRONTEND_URL);
   } catch (error) {
     console.error("Auth callback error:", error);
-    res.redirect("http://localhost:5173/?error=auth_failed");
+    res.redirect(`${FRONTEND_URL}?error=auth_failed`);
   }
 });
 

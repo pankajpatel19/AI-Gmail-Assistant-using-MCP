@@ -76,7 +76,6 @@ router.post("/", async (req, res) => {
       const toolResults = await Promise.all(
         message.tool_calls.map(async (call) => {
           const args = JSON.parse(call.function.arguments);
-          console.log(`Executing MCP Tool: ${call.function.name}`, args);
 
           try {
             const result = await mcpClient.callTool({

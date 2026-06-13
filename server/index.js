@@ -26,7 +26,7 @@ async function initGmail() {
   }
 }
 
-server.tool(
+server.registerTool(
   "get_unread_emails",
   "Fetch unread emails from the Gmail inbox",
   {
