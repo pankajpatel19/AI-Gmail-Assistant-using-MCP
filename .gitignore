@@ -1,0 +1,32 @@
+# ─── Dependencies ─────────────────────────────────────────────────────────────
+node_modules/
+
+# ─── Environment Variables ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ─── Google OAuth / Credentials (SENSITIVE — never commit!) ───────────────────
+credentials.json
+token.json
+**/credentials.json
+**/token.json
+
+# ─── Build Output ─────────────────────────────────────────────────────────────
+dist/
+build/
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Editor ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.swp

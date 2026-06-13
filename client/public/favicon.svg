@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="24" fill="#7c6aff"/>
+  
+  <!-- Envelope Back -->
+  <path d="M20 38 L50 58 L80 38 V68 C80 72.4 76.4 76 72 76 H28 C23.6 76 20 72.4 20 68 V38 Z" fill="#ffffff"/>
+  
+  <!-- Envelope Flap -->
+  <path d="M80 32 C80 27.6 76.4 24 72 24 H28 C23.6 24 20 27.6 20 32 L50 52 L80 32 Z" fill="#e4e6f0"/>
+  
+  <!-- AI Sparkle 1 (Top Right) -->
+  <path d="M78 12 L80.5 19.5 L88 22 L80.5 24.5 L78 32 L75.5 24.5 L68 22 L75.5 19.5 Z" fill="#ffdd55"/>
+  
+  <!-- AI Sparkle 2 (Smaller) -->
+  <path d="M88 8 L89 11 L92 12 L89 13 L88 16 L87 13 L84 12 L87 11 Z" fill="#ffdd55"/>
+</svg>
