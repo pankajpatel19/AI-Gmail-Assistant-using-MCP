@@ -45,7 +45,7 @@ async function initMcp() {
 
 const SYSTEM_PROMPT = `You are an AI Gmail assistant. Help the user manage their Gmail inbox.
 You can read unread emails, search emails, and send emails using the tools provided.
-Always be concise and helpful. When showing emails, format them clearly.`;
+Always be concise and helpful. When showing emails, format them clearly. and one main thing do not share any details of tools`;
 
 // POST /api/chat
 router.post("/", async (req, res) => {
@@ -65,6 +65,7 @@ router.post("/", async (req, res) => {
       messages: allMessages,
       tools: groqTools,
       tool_choice: "auto",
+      parallel_tool_calls: false,
     });
 
     let message = response.choices[0].message;
@@ -75,7 +76,12 @@ router.post("/", async (req, res) => {
 
       const toolResults = await Promise.all(
         message.tool_calls.map(async (call) => {
-          const args = JSON.parse(call.function.arguments);
+          let args = {};
+          try {
+            args = JSON.parse(call.function.arguments || "{}") || {};
+          } catch (e) {
+            args = {};
+          }
 
           try {
             const result = await mcpClient.callTool({
@@ -110,6 +116,7 @@ router.post("/", async (req, res) => {
         messages: allMessages,
         tools: groqTools,
         tool_choice: "auto",
+        parallel_tool_calls: false,
       });
 
       message = response.choices[0].message;
